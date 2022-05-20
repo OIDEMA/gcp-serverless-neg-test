@@ -6,7 +6,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "upload": "gcloud builds submit --tag gcr.io/serverless-neg-test/serverless-neg-test:1.0.0 .",
+    "deploy": "gcloud run deploy --image=gcr.io/serverless-neg-test/serverless-neg-test:1.0.0 --platform managed --port 8080 --region asia-northeast1"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
